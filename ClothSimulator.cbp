@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="ClothSimulator" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/ClothSimulator" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/ClothSimulator" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add option="`$(#WX_CONFIG) --cflags`" />
+			<Add directory="ClothSimulator" />
+		</Compiler>
+		<Linker>
+			<Add option="`pkg-config --libs glm`" />
+			<Add option="`pkg-config --libs glfw3`" />
+			<Add option="`pkg-config --libs glew`" />
+			<Add option="`$(#WX_CONFIG) --libs all`" />
+			<Add library="opengl32" />
+		</Linker>
+		<Unit filename="ClothSimulator/ClothMesh.cpp" />
+		<Unit filename="ClothSimulator/ClothMesh.h" />
+		<Unit filename="ClothSimulator/Controller.cpp" />
+		<Unit filename="ClothSimulator/Controller.h" />
+		<Unit filename="ClothSimulator/Model.cpp" />
+		<Unit filename="ClothSimulator/Model.h" />
+		<Unit filename="ClothSimulator/ModelListener.h" />
+		<Unit filename="ClothSimulator/OpenGLContext.cpp" />
+		<Unit filename="ClothSimulator/OpenGLContext.h" />
+		<Unit filename="ClothSimulator/View.h" />
+		<Unit filename="ClothSimulator/ViewListener.h" />
+		<Unit filename="ClothSimulator/World.cpp" />
+		<Unit filename="ClothSimulator/World.h" />
+		<Unit filename="ClothSimulator/cs2DPanel.cpp" />
+		<Unit filename="ClothSimulator/cs2DPanel.h" />
+		<Unit filename="ClothSimulator/csApplication.cpp" />
+		<Unit filename="ClothSimulator/csApplication.h" />
+		<Unit filename="ClothSimulator/csGL3DGrid.cpp" />
+		<Unit filename="ClothSimulator/csGL3DGrid.h" />
+		<Unit filename="ClothSimulator/csGL3DObject.cpp" />
+		<Unit filename="ClothSimulator/csGL3DObject.h" />
+		<Unit filename="ClothSimulator/csGLPanel.cpp" />
+		<Unit filename="ClothSimulator/csGLPanel.h" />
+		<Unit filename="ClothSimulator/csMainFrame.cpp" />
+		<Unit filename="ClothSimulator/csMainFrame.h" />
+		<Unit filename="ClothSimulator/glincludes.h" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>
