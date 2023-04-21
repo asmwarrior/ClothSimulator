@@ -254,11 +254,15 @@ void ClothMesh::create(std::vector<glm::vec2> &vertices, std::vector<Polygon2>& 
 
 	// cut faces on the grid horizontally
 	for (float y = miny + segment_length; y <= maxy; y += segment_length) {
-		cut_faces_Greiner_Hormann(m_vertices, m_faces, glm::vec2(-1e10, y), glm::vec2(1e10, y));
+		glm::vec2 line0 = glm::vec2(-1e10, y);
+		glm::vec2 line1 = glm::vec2(1e10, y);
+		cut_faces_Greiner_Hormann(m_vertices, m_faces, line0, line1);
 	}
 	// cut faces on the grid vertically
 	for (float x = minx + segment_length; x <= maxx; x += segment_length) {
-		cut_faces_Greiner_Hormann(m_vertices, m_faces, glm::vec2(x, -1e10), glm::vec2(x, 1e10));
+		glm::vec2 line0 = glm::vec2(x, -1e10);
+		glm::vec2 line1 = glm::vec2(x, 1e10);
+		cut_faces_Greiner_Hormann(m_vertices, m_faces, line0, line1);
 	}
 
 	// just wiggle in the z coords to give cloth a better initial flow.
